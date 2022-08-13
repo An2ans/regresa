@@ -1,7 +1,9 @@
-let dias = document.getElementById("dias");
-let horas = document.getElementById("horas");
-let minutos = document.getElementById("minutos");
-let segundos = document.getElementById("segundos");
+// CUENTA ATRAS
+
+const dias = document.getElementById("dias");
+const horas = document.getElementById("horas");
+const minutos = document.getElementById("minutos");
+const segundos = document.getElementById("segundos");
 
 const retorno = new Date(2022, 8, 4, 19, 20, 0);
 
@@ -21,6 +23,21 @@ const updateCounter = () => {
   horas.innerHTML = counter.hours;
   minutos.innerHTML = counter.minutes;
   segundos.innerHTML = counter.seconds;
+
+  if (counter.days == 0 && counter.hours <= 2) {
+    dias.parentElement.classList.add("red");
+  }
 };
 
 setInterval(updateCounter, 1000);
+
+// handleAn2ans
+
+const an2ans = document.getElementById("an2ans");
+
+const handleAn2ans = (e) => {
+  let n = Math.round(Math.random() * 7);
+  var audio = new Audio(`public/an2ans` + n + `.ogg`);
+
+  audio.play();
+};
