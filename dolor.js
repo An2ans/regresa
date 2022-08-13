@@ -55,5 +55,5 @@ const handleGangrena = (e) => {
   dolor.setAttribute("onClick", "");
   var gangrena = new Audio("public/gangrena.mp3");
   gangrena.play();
-  setInterval(handleDolor, 360);
+  setInterval(handleDolor, 450);
 };
